@@ -1,0 +1,136 @@
+# ServerIP and ServerPort are the IP and Port of the Lighting/Video Server (SundayServer/server.py)
+# This is usually address 127.0.0.1 and port 5000
+ServerIP: "127.0.0.1"
+ServerPort: 5000
+
+# AtemIP is the address of the Black Magic ATEM switcher
+AtemIP: "172.18.5.180"
+
+# ATEMCameras contain the name and index of each camera on the Black Magic ATEM switcher
+# These take the form "Name: indexNumber"
+# The name will be used in the "Live" field for each cue
+# The index is the port into which the respective camera is plugged, starting at 1.
+# The index can also be found in the ATEM Software Control by counting to which slot the input takes.
+ATEMCameras:
+  Cam: 2
+  Pro: 1
+
+# CueGroups contain the groups and cues that make up the web page.
+# At the first level is a list of groups (2 spaces in front)
+# Under each of these is a list of cues in that group (4 spaces in)
+# Under each cue is a list of values as follows (6 spaces in):
+#  Channel:  The Midi Channel as defined in the cue trigger in Onyx
+#  NoteFrom: The Midi Note From as defined in the cue trigger in Onyx
+#  NoteTo:   The Midi Note To as defined in the cue trigger in Onyx
+#  Live:     The camera name as defined above that should be live when the cue is triggered
+#  Key:      The key index from atem that should be live when the cue is triggered. Use 0 for no key.
+CueGroups:
+  "General":
+    "House On":
+      Channel: 7
+      NoteFrom: 0
+      NoteTo: 127
+      Live: Pro
+      Key: 0
+    "House Off":
+      Channel: 8
+      NoteFrom: 0
+      NoteTo: 127
+      Live: Pro
+      Key: 0
+
+  "South Raleigh":
+    "Walk In":
+      Channel: 1
+      NoteFrom: 0
+      NoteTo: 127
+      Live: Pro
+      Key: 0
+    "Worship":
+      Channel: 2
+      NoteFrom: 0
+      NoteTo: 127
+      Live: Cam
+      Key: 1
+    "Teaching Blank":
+      Channel: 4
+      NoteFrom: 0
+      NoteTo: 127
+      Live: Cam
+      Key: 0
+    "Teaching Slide":
+      Channel: 4
+      NoteFrom: 0
+      NoteTo: 127
+      Live: Pro
+      Key: 0
+    "Video":
+      Channel: 3
+      NoteFrom: 0
+      NoteTo: 127
+      Live: Pro
+      Key: 0
+    "Announcements":
+      Channel: 4
+      NoteFrom: 0
+      NoteTo: 127
+      Live: Cam
+      Key: 2
+    "Response":
+      Channel: 6
+      NoteFrom: 0
+      NoteTo: 127
+      Live: Cam
+      Key: 0
+    "Worship (Low Light)":
+      Channel: 9
+      NoteFrom: 0
+      NoteTo: 127
+      Live: Cam
+      Key: 1
+    "Baptism":
+      Channel: 5
+      NoteFrom: 0
+      NoteTo: 127
+      Live: Cam
+      Key: 0
+
+  "Church of God":
+    "Church of God":
+      Channel: 10
+      NoteFrom: 0
+      NoteTo: 127
+      Live: Pro
+      Key: 0
+
+  "Español":
+    "Español Walk In":
+      Channel: 12
+      NoteFrom: 0
+      NoteTo: 127
+      Live: Pro
+      Key: 0
+    "Español Worship":
+      Channel: 11
+      NoteFrom: 0
+      NoteTo: 127
+      Live: Pro
+      Key: 0
+    "Español Teaching":
+      Channel: 13
+      NoteFrom: 0
+      NoteTo: 127
+      Live: Pro
+      Key: 0
+    "Español Video":
+      Channel: 14
+      NoteFrom: 0
+      NoteTo: 127
+      Live: Pro
+      Key: 0
+    "Español Announcements":
+      Channel: 15
+      NoteFrom: 0
+      NoteTo: 127
+      Live: Pro
+      Key: 0

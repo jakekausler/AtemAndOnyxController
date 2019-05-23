@@ -1,9 +1,14 @@
-# ServerIP and ServerPort are the IP and Port of the Lighting/Video Server (SundayServer/server.py)
-# This is usually address 127.0.0.1 and port 5000
-ServerIP: "127.0.0.1"
+# ServerHost and ServerPort are the IP and Port of the Lighting/Video Server (SundayServer/server.py)
+# The host is the machine that the server is running on. If only running local, use 127.0.0.1 or localhost
+# The port can be any free port on which to run the server
+ServerHost: localhost
 ServerPort: 5000
 
-# AtemIP is the address of the Black Magic ATEM switcher
+# MidiPort is the name of the port on which midi should be run
+# To get a list of port names, run mido.get_output_names() in python
+MidiPort: "loopMIDI Port 1"
+
+# AtemIP is the address of the Blackmagic ATEM switcher
 AtemIP: "172.18.5.180"
 
 # ATEMCameras contain the name and index of each camera on the Black Magic ATEM switcher
@@ -11,7 +16,7 @@ AtemIP: "172.18.5.180"
 # The name will be used in the "Live" field for each cue
 # The index is the port into which the respective camera is plugged, starting at 1.
 # The index can also be found in the ATEM Software Control by counting to which slot the input takes.
-ATEMCameras:
+AtemCameras:
   Cam: 2
   Pro: 1
 

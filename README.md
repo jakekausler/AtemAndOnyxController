@@ -1,7 +1,5 @@
 # Atem And Onyx Controller
 
-This controller pip install
-
 ## Requirements
 
 - [Node.js](https://nodejs.org/en/)

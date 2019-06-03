@@ -38,7 +38,6 @@ def Scene(category, scene):
     atem_ip = config['AtemIP']
     camera = config["AtemCameras"][config['CueGroups'][category][scene]["Live"]]
     key = config['CueGroups'][category][scene]["Key"] - 1
-    return success()
     print(f"Triggering camera: {camera} with key:{key} @ ip: {atem_ip}")
     trigger_camera(atem_ip, camera, key)
     return success() #Not returning?
@@ -54,9 +53,7 @@ def trigger_lights(channel, note):
 
 
 def trigger_camera(atem_ip, camera, key):
-    print(f"Triggering...")
     success = execute_js('atem.js', str(atem_ip) + " " + str(camera) + " " + str(key))
-    print(f"Triggered")
 
 
 if __name__ == '__main__':

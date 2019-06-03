@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "atem-connection": "^0.10.0"
+  }
+}

@@ -67,7 +67,7 @@ CueGroups:
       Channel: 4
       NoteFrom: 0
       NoteTo: 127
-      Live: Pro
+      Live: test
       Key: 0
     "Video":
       Channel: 3
